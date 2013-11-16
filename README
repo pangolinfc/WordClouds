@@ -1,0 +1,45 @@
+
+This is a small library to display word clouds, originally intended to
+help visualize topic models.  To install run:
+    python setup.py install [--user]
+
+For a demonstration try running 
+    cd trunk/
+    python WordClouds.py
+
+It depends on the following libraries:
+    matplotlib >= 1.1
+    Quadtree (tested with 1.2)
+
+Running the module as a script will benchmark it.  Here are some rough numbers
+for a word weight distribution with fat tails:
+
+    ===================
+     seconds     words
+    -------------------
+         1.0        50
+         5.0       300
+        20.0       900
+        60.0      2000
+    ===================
+
+And with skinny tails:
+    
+    ===================
+     seconds     words
+    -------------------
+         1.0        75
+         5.0       500
+        20.0      2000
+        60.0      5000
+    ===================
+
+Note that these numbers measure time to compute the cloud, not time to display
+it on the screen.  That will take a few additional seconds.
+
+Currently it has the following dependencies:
+    * Quadtree (I used 0.1.2)
+    * Matplotlib >= 1.1
+
+For simple use cases try the build_cloud.py script.
+
